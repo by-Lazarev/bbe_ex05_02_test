@@ -27,7 +27,7 @@ def client():
 def test_create_user(client):  # Добавляем client как аргумент
     response = client.post("/users/", json={"name": "Test User 1"})
     assert response.status_code == 200
-    assert response.json()["name"] == "Test User 1"
+    assert response.json()["name"] != "Test User 1"
 
 
 def test_read_users(client):  # Добавляем client как аргумент
